@@ -23,3 +23,11 @@
 .hide {
     display: none;
 }
+
+.fontAwesome:before {
+position: absolute;
+top: 0px;
+left: 0;
+font-family: FontAwesome;
+font-size: 1.2em;
+color: #000; }
