@@ -25,9 +25,6 @@
 }
 
 .fontAwesome:before {
-position: absolute;
-top: 0px;
-left: 0;
+content: '\f04b';
 font-family: FontAwesome;
-font-size: 1.2em;
 color: #000; }
