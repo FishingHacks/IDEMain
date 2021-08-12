@@ -23,11 +23,3 @@
 .hide {
     display: none;
 }
-
-#run::before {
-content: '\f04b';
-}
-
-.fontAwesome::before {
-font-family: FontAwesome;
-color: #000; }
