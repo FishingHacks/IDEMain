@@ -24,7 +24,7 @@
     display: none;
 }
 
-#run {
+#run::before {
 content: '\f04b';
 }
 
