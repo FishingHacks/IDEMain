@@ -124,9 +124,9 @@ console.log("Hi!");
                 console.log(fileHandle);
                 var filename = fileHandle.name;
                 console.log(file);
-                const writable = await fileHandle.createWritable();
+                const writeable = await fileHandle.createWritable();
                 await writeable.write(editorCodeBlock.getValue());
-                await writable.close();
+                await writeable.close();
             }
             else {
                 let filename = promt("Filename", "download.js")
