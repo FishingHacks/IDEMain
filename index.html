@@ -125,7 +125,7 @@ console.log("Hi!");
                 var filename = fileHandle.name;
                 console.log(file);
                 const writeable = await fileHandle.createWritable();
-                await writeable.write(editorCodeBlock.getValue());
+                await writeable.write(data2blob(editorCodeBlock.getValue()));
                 await writeable.close();
             }
             else {
