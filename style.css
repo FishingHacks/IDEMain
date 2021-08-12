@@ -24,7 +24,7 @@
     display: none;
 }
 
-.fontAwesome:before {
+.fontAwesome::before {
 content: '\f04b';
 font-family: FontAwesome;
 color: #000; }
