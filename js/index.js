@@ -16,6 +16,7 @@ function load() {
         e.preventDefault();
         var file = e.dataTransfer.files[0];
         console.log(file);
+        updateWindow();
         if (file.type.startsWith("text/") || file.type.startsWith("application/")) {
             var type = file.type;
             type = type.split("/");
@@ -75,6 +76,4 @@ function load() {
     function updateWindow() {
         document.title = editorsettings.window.title + " - " + editorsettings.window.file + (editorsettings.window.isSaved ? "" : "*");
     }
-
-    setInterval(updateWindow, 50);
 }

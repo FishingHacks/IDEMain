@@ -58,6 +58,7 @@ console.log("Hi!");
         document.getElementById("file").addEventListener("change", (e) => {
             console.log(e.target.files[0]);
             var file = e.target.files[0];
+            updateWindow();
             if (file.type.startsWith("text/") || file.type.startsWith("application/")) {
                 var type = file.type;
                 type = type.split("/");
@@ -139,6 +140,7 @@ console.log("Hi!");
                 saveAs(data2blob(editorCodeBlock.getValue()), filename);
             }
             editorsettings.window.isSaved = true;
+            updateWindow();
         }
 
         var codeContent = $.trim($('#CodeBlock').text());
@@ -170,6 +172,7 @@ console.log("Hi!");
             if (windowheight < window.outerHeight) { windowheight = window.outerHeight; }
             $("#CodeBlock").height(window.outerHeight - (window.outerHeight / 5));
             editorsettings.window.isSaved = false;
+            updateWindow();
         }
         updateLines();
         /*
