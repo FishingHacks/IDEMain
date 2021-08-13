@@ -71,10 +71,10 @@ svg.fa-save {
     vertical-align: middle;
 }
 
-p.dragtext {
+p.dragtext--over {
     display: inherit;
 }
 
-#dragtext {
+p.dragtext {
     display: none;
 }
