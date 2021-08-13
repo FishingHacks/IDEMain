@@ -27,9 +27,15 @@
 svg.fa-play {
     color: rgb(25, 173, 25);
     cursor: pointer;
+    size: 7%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 svg.fa-save {
     color: black;
     cursor: pointer;
+    size: 7%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
