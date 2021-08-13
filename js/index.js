@@ -3,6 +3,6 @@ function load() {
         execute();
     });
     $("svg.fa-save").mousedown(function () {
-        execute();
+        save();
     });
 }
