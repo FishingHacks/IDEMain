@@ -64,4 +64,5 @@ function load() {
     var container = document.getElementById("container");
     container.addEventListener("dragleave", resetdrag);
     container.addEventListener("dragend", resetdrag);
+    container.addEventListener("drop", resetdrag);
 }
