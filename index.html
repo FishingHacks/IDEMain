@@ -143,7 +143,7 @@ console.log("Hi!");
         var codeContent = $.trim($('#CodeBlock').text());
         $('#CodeBlock')[0].innerHTML = '';
 
-        document.getElementById("body").style = editorsettings.window.themes[editorsettings.window.theme];
+        document.getElementById("body").style = (theme === 1 ? vsdark : (theme === 0 ? vs : hcblack));
         var editorCodeBlock = monaco.editor.create(document.getElementById('CodeBlock'), {
             value: codeContent,
             language: "javascript",
@@ -198,7 +198,7 @@ console.log("Hi!");
         }
         function onChangeTheme() {
             theme = $('#theme')[0].options.selectedIndex;
-            monaco.editor.setTheme((theme === 1 ? 'vs-dark' : (theme === 0 ? 'vs' : 'hc-black')));
+            monaco.editor.setTheme((editorsettings.window.theme === 1 ? 'vs-dark' : (editorsettings.window.theme === 0 ? 'vs' : 'hc-black')));
             editorsettings.window.theme = theme;
             editorsettings.window.themes[editorsettings.window.theme]
         }
