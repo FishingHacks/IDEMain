@@ -6,6 +6,6 @@ function load() {
         save();
     });
     $("svg.fa-upload").mousedown(function () {
-        document.getElementById("#file").click();
+        $("#file").click();
     });
 }
