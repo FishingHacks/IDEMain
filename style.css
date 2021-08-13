@@ -73,6 +73,8 @@ svg.fa-save {
 
 h3.dragtext--over {
     display: inherit;
+    top: 47%;
+    bottom: 47%;
 }
 
 h3.dragtext {
