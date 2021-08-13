@@ -62,7 +62,6 @@ function load() {
 
     document.getElementById("container").addEventListener('dragover', handleDragOver, false);
     var container = document.getElementById("container");
-    ["dragleave", "dragend"].forEach(type, e => {
-        container.addEventListener(type, resetdrag);
-    });
+    container.addEventListener("dragleave", resetdrag);
+    container.addEventListener("dragend", resetdrag);
 }
