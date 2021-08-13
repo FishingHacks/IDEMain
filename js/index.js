@@ -1,5 +1,5 @@
-alert("Hi");
-
-$("svg.fa-play").mousedown(function () {
-    execute();
-});
+function load() {
+    $("svg.fa-play").mousedown(function () {
+        execute();
+    });
+}
