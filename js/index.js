@@ -9,7 +9,7 @@ function load() {
         $("#file").click();
     });
 
-    document.querySelector("div#container").addEventListener("drop", function (e) {
+    document.querySelector("div#container").addEventListener("drop", (e) => {
         e.stopPropagation();
         e.preventDefault();
         var file = e.dataTransfer.files[0];
@@ -46,5 +46,5 @@ function load() {
                 $("#run").addClass("hide");
             }
             console.log(type[0] + ": " + type[1]);
-        }, false);
+        });
 }
