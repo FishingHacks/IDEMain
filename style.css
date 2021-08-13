@@ -70,4 +70,7 @@ svg.fa-save {
     content: 'Drop here to open';
     text-align: center;
     align-content: center;
+    font-size: large;
+    align-items: center;
+    vertical-align: middle;
 }
