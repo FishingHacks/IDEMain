@@ -53,11 +53,11 @@ function load() {
         evt.stopPropagation();
         evt.preventDefault();
         evt.dataTransfer.dropEffect = 'copy';
-        document.getElementById("container").addClass("dragover");
+        $("#container").addClass("dragover");
     }
 
     function resetdrag() {
-        document.getElementById("container").removeClass("dragover");
+        $("#container").removeClass("dragover");
     }
 
     document.getElementById("container").addEventListener('dragover', handleDragOver, false);
