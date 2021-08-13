@@ -54,3 +54,12 @@ svg.fa-save {
     padding-left: .5%;
     padding-right: .5%;
 }
+
+.dragover {
+    background-color: rgba(36, 194, 36, 0.562);
+    color: rgb(255, 255, 255);
+}
+
+.dragover::after {
+    content: 'Drop here to open';
+}
