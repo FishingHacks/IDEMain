@@ -64,13 +64,17 @@ svg.fa-save {
     left: 0%;
     right: 0%;
     z-index: 1000;
-}
-
-.dragover::after {
-    content: 'Drop here to open';
     text-align: center;
     align-content: center;
     font-size: large;
     align-items: center;
     vertical-align: middle;
+}
+
+p.dragtext {
+    display: inherit;
+}
+
+#dragtext {
+    display: none;
 }

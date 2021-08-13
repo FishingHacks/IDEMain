@@ -54,10 +54,12 @@ function load() {
         evt.preventDefault();
         evt.dataTransfer.dropEffect = 'copy';
         $("#container").addClass("dragover");
+        $("#dragtext").addClass("dragtext");
     }
 
     function resetdrag() {
         $("#container").removeClass("dragover");
+        $("#dragtext").removeClass("dragtext");
     }
 
     document.getElementById("container").addEventListener('dragover', handleDragOver, false);
