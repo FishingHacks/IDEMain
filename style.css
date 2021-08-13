@@ -27,4 +27,6 @@
 .fa-play {
     color: rgb(25, 173, 25);
     outline: black;
+    outline-offset: 10px;
+    outline-style: solid;
 }
