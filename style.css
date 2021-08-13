@@ -24,7 +24,12 @@
     display: none;
 }
 
-.fa-play {
+svg.fa-play {
     color: rgb(25, 173, 25);
+    cursor: pointer;
+}
+
+svg.fa-save {
+    color: black;
     cursor: pointer;
 }
