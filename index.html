@@ -124,7 +124,7 @@ console.log("Hi!");
         async function save() {
             let fileHandle;
             if (window.document.location.origin.startsWith("https")) {
-                fileHandle = await window.showSaveFilePicker();
+                fileHandle = await window.showSaveFilePicker({ suggestedName: editorsettings.window.file });
                 console.log(fileHandle);
                 var filename = fileHandle.name;
                 console.log(file);
@@ -133,24 +133,17 @@ console.log("Hi!");
                 await writeable.close();
             }
             else {
-                let filename = promt("Filename", "download.js")
+                let filename = promt("Filename", editorsettings.window.file);
                 if (!filename.includes(".")) { filename = filename + ".txt" }
                 saveAs(data2blob(editorCodeBlock.getValue()), filename);
             }
+            editorsettings.window.isSaved = true;
         }
 
         var codeContent = $.trim($('#CodeBlock').text());
         $('#CodeBlock')[0].innerHTML = '';
 
-        if (theme === 1) {
-            document.getElementById("body").style = vsdark;
-        }
-        if (theme === 0) {
-            document.getElementById("body").style = vs;
-        }
-        if (theme === 2) {
-            document.getElementById("body").style = hcblack;
-        }
+        document.getElementById("body").style = editorsettings.window.themes[editorsettings.window.theme];
         var editorCodeBlock = monaco.editor.create(document.getElementById('CodeBlock'), {
             value: codeContent,
             language: "javascript",
@@ -175,11 +168,12 @@ console.log("Hi!");
             windowheight = ((editorCodeBlock.getModel().getLineCount() * 19) + 10);
             if (windowheight < window.outerHeight) { windowheight = window.outerHeight; }
             $("#CodeBlock").height(window.outerHeight - (window.outerHeight / 5));
+            editorsettings.window.isSaved = false;
         }
         updateLines();
         /*
         setInterval(() => {
-            $("#CodeBlock").height((editorCodeBlock.getModel().getLineCount() * 19) + 10);
+                    $("#CodeBlock").height((editorCodeBlock.getModel().getLineCount() * 19) + 10);
         }, 1);*/
         function onChangeLang() {
             var newlang = $('#lang')[0].options.selectedIndex;
@@ -205,15 +199,8 @@ console.log("Hi!");
         function onChangeTheme() {
             theme = $('#theme')[0].options.selectedIndex;
             monaco.editor.setTheme((theme === 1 ? 'vs-dark' : (theme === 0 ? 'vs' : 'hc-black')));
-            if (theme === 1) {
-                document.getElementById("body").style = vsdark;
-            }
-            if (theme === 0) {
-                document.getElementById("body").style = vs;
-            }
-            if (theme === 2) {
-                document.getElementById("body").style = hcblack;
-            }
+            editorsettings.window.theme = theme;
+            editorsettings.window.themes[editorsettings.window.theme]
         }
         if (editorCodeBlock.getModel().getLanguageIdentifier().language == "javascript" || editorCodeBlock.getModel().getLanguageIdentifier().language == "html") {
             $("#run").removeClass("hide")

@@ -69,4 +69,12 @@ function load() {
     container.addEventListener("dragleave", resetdrag);
     container.addEventListener("dragend", resetdrag);
     container.addEventListener("drop", resetdrag);
+
+    var editorsettings = { window: { title: "Editor", file: "untitled", isSaved: false, theme: 0, themes: [vs, vsdark, hcblack] } };
+
+    function updateWindow() {
+        document.title = editorsettings.window.title + " - " + editorsettings.window.file + (isSaved ? "" : "*");
+    }
+
+    setInterval(updateWindow, 10);
 }
