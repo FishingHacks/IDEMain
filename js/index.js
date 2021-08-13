@@ -73,8 +73,8 @@ function load() {
     var editorsettings = { window: { title: "Editor", file: "untitled", isSaved: false, theme: 0, themes: [vs, vsdark, hcblack] } };
 
     function updateWindow() {
-        document.title = editorsettings.window.title + " - " + editorsettings.window.file + (isSaved ? "" : "*");
+        document.title = editorsettings.window.title + " - " + editorsettings.window.file + (editorsettings.window.isSaved ? "" : "*");
     }
 
-    setInterval(updateWindow, 10);
+    setInterval(updateWindow, 50);
 }
