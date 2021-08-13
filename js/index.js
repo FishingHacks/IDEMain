@@ -48,4 +48,12 @@ function load() {
             console.log(type[0] + ": " + type[1]);
         }
     }, false);
+
+    function handleDragOver(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        evt.dataTransfer.dropEffect = 'copy';
+    }
+
+    document.getElementById("container").addEventListener('dragover', handleDragOver, false);
 }
