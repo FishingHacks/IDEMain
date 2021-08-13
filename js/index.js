@@ -46,5 +46,6 @@ function load() {
                 $("#run").addClass("hide");
             }
             console.log(type[0] + ": " + type[1]);
-        });
+        }
+    });
 }
