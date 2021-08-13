@@ -11,6 +11,7 @@
     overflow: visible;
     margin: 0;
     padding: 0;
+    align-content: center;
 }
 
 div#container {
@@ -20,6 +21,7 @@ div#container {
     bottom: 0%;
     left: 0%;
     right: 0%;
+    position: fixed;
 }
 
 #file {
@@ -56,6 +58,7 @@ svg.fa-save {
 }
 
 .dragover {
+    position: fixed;
     background-color: rgba(36, 194, 36, 0.562);
     color: rgb(255, 255, 255);
     width: 100%;
@@ -68,4 +71,6 @@ svg.fa-save {
 
 .dragover::after {
     content: 'Drop here to open';
+    text-align: center;
+    align-content: center;
 }
