@@ -53,7 +53,16 @@ function load() {
         evt.stopPropagation();
         evt.preventDefault();
         evt.dataTransfer.dropEffect = 'copy';
+        document.getElementById("container").addClass("dragover");
+    }
+
+    function resetdrag() {
+        document.getElementById("container").removeClass("dragover");
     }
 
     document.getElementById("container").addEventListener('dragover', handleDragOver, false);
+    var container = document.getElementById("container");
+    ["dragleave", "dragend"].forEach(type, e => {
+        container.addEventListener(type, resetdrag);
+    });
 }
