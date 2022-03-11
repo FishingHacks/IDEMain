@@ -163,7 +163,8 @@ console.log("Hi!");
             minimap: {
                 enabled: true
             },
-            lineHeight: 19
+            lineHeight: 19,
+            lineNumbers: integer_to_roman,
         });
         editorCodeBlock.onDidType(updateLines);
         function updateLines(ignore) {
