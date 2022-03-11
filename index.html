@@ -84,7 +84,7 @@ console.log("Hi!");
                 });
                 reader.readAsText(file);
 
-                if (editorCodeBlock.getModel().getLanguageIdentifier().language == "javascript" || editorCodeBlock.getModel().getLanguageIdentifier().language == "html") {
+                if (editorCodeBlock.getModel().getLanguageId() == "javascript" || editorCodeBlock.getModel().getLanguageId == "html") {
                     $("#run").removeClass("hide")
                 }
                 else {
@@ -96,10 +96,10 @@ console.log("Hi!");
 
         //TODO: More Languages
         function execute() {
-            if (editorCodeBlock.getModel().getLanguageIdentifier().language == "html") {
+            if (editorCodeBlock.getModel().getLanguageId == "html") {
                 //document.getElementById("execute").contentWindow.document.body.innerHTML = "<style>body{background: #ffffff; color: #000000;}</style>" + editorCodeBlock.getValue();
             }
-            else if (editorCodeBlock.getModel().getLanguageIdentifier().language == "javascript") {
+            else if (editorCodeBlock.getModel().getLanguageId == "javascript") {
                 console.log = (msg) => { alert("New message in the console:\n" + msg); console.info(msg) };
                 eval(editorCodeBlock.getValue());
                 console.log = (msg) => { console.info(msg) };
@@ -193,7 +193,7 @@ console.log("Hi!");
             else {
                 monaco.editor.setModelLanguage(editorCodeBlock.getModel(), "plaintext");
             }
-            if (editorCodeBlock.getModel().getLanguageIdentifier().language == "javascript" || editorCodeBlock.getModel().getLanguageIdentifier().language == "html") {
+            if (editorCodeBlock.getModel().getLanguageId == "javascript" || editorCodeBlock.getModel().getLanguageId == "html") {
                 $("#run").removeClass("hide")
             }
             else {
@@ -206,7 +206,7 @@ console.log("Hi!");
             editorsettings.window.theme = theme;
             editorsettings.window.themes[editorsettings.window.theme]
         }
-        if (editorCodeBlock.getModel().getLanguageIdentifier().language == "javascript" || editorCodeBlock.getModel().getLanguageIdentifier().language == "html") {
+        if (editorCodeBlock.getModel().getLanguageId == "javascript" || editorCodeBlock.getModel().getLanguageId == "html") {
             $("#run").removeClass("hide")
         }
         else {
